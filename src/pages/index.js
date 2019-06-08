@@ -8,14 +8,14 @@ import SEO from "../components/seo"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Container className="childContainer">
-      <p>Pierakim Lambda.</p>
-      <p>Developer</p>
-      <p>Brisbane, Australia</p>
-      <Container style={{ maxWidth: `200px`, marginBottom: `1.45rem` }}>
-        <Images/>
-      </Container>
-      {/* <Button href="/page-2/" variant="light">Go to page 2</Button> */}
+    <Container className="childContainer" fluid={true}>
+      <div>
+        <p>Developer // Brisbane // Australia</p>
+        <Container style={{ maxWidth: `200px`, marginBottom: `1.45rem` }}>
+          <Images/>
+        </Container>
+        {/* <Button href="/page-2/" variant="light">Go to page 2</Button> */}
+      </div>
     </Container>
   </Layout>
 )

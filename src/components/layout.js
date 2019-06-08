@@ -8,7 +8,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import "./layout.css"
 
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -24,11 +23,9 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Container className="mainContainer" fluid={true} >
-          <Row>
-            <Header siteTitle={data.site.siteMetadata.title}/>
+            {/* <Header siteTitle={data.site.siteMetadata.title}/> */}
               {children}
             {/* <Footer/> */}
-          </Row>
         </Container>
       </>
     )}

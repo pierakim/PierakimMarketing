@@ -9,7 +9,17 @@ html, body, #___gatsby {
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
-} 
+}
+
+/* https://github.com/gatsbyjs/gatsby/issues/7310 */
+div[role="group"][tabindex] {
+  height: 100%;
+}
+
+.container-fluid {
+  height: 100%;
+  overflow-y: hidden; /* don't show content that exceeds my height */
+}
 
 .header{
   color: white;
@@ -24,5 +34,7 @@ html, body, #___gatsby {
 }
 
 .childContainer{
-  text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
