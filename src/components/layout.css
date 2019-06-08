@@ -11,10 +11,12 @@ html, body, #___gatsby {
    background-size: cover;
 } 
 
+.header{
+  color: white;
+}
 
 .mainContainer{
-  
-  color: blue;
+  color: white;
 }
 
 .NavBarFluid{
@@ -23,5 +25,4 @@ html, body, #___gatsby {
 
 .childContainer{
   text-align: center;
-  /* justify-content: center; */
 }

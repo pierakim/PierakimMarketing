@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import Footer from "./footer"
+// import Footer from "./footer"
 import 'bootstrap/dist/css/bootstrap.css';
 import "./layout.css"
 

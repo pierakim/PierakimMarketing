@@ -12,11 +12,11 @@ const IndexPage = () => (
     <Container className="childContainer">
       <p>Pierakim Lambda.</p>
       <p>Developer</p>
-      <p>Brisbane, Austrlia</p>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+      <p>Brisbane, Australia</p>
+      <Container style={{ maxWidth: `200px`, marginBottom: `1.45rem` }}>
         <Image/>
-      </div>
-      <Button href="/page-2/" variant="primary">Go to page 2</Button>
+      </Container>
+      <Button href="/page-2/" variant="light">Go to page 2</Button>
     </Container>
   </Layout>
 )
