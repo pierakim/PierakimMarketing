@@ -5,21 +5,21 @@ import Img from "gatsby-image"
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const Image = () => (
+const Images = () => (
   <StaticQuery
     query={graphql`
       query {
         githubImage: file(relativePath: { eq: "GitHub-Mark-Light-120px-plus.png" }) {
           childImageSharp {
             fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
         linkedInImage: file(relativePath: { eq: "In-White-128.png" }) {
           childImageSharp {
             fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
@@ -37,4 +37,4 @@ const Image = () => (
     }
   />
 )
-export default Image
+export default Images
