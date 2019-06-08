@@ -23,11 +23,11 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Container fluid={true}>
+        <Container className="mainContainer" fluid={true} >
           <Row>
             <Header siteTitle={data.site.siteMetadata.title}/>
               {children}
-            <Footer/>
+            {/* <Footer/> */}
           </Row>
         </Container>
       </>
