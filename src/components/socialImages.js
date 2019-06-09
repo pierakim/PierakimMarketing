@@ -1,5 +1,5 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, withPrefix } from "gatsby"
 import Img from "gatsby-image"
 
 import Row from 'react-bootstrap/Row';
@@ -45,7 +45,11 @@ const SocialImages = () => (
           </a>
         </Col>
         <Col>
-          <Img fluid={data.resumeImage.childImageSharp.fluid}/>
+          <a rel="noopener noreferrer"
+            href={withPrefix('/_resume.pdf')}
+            target="_blank">
+            <Img fluid={data.resumeImage.childImageSharp.fluid}/>
+          </a>
         </Col>
       </Row>
     }
