@@ -4,7 +4,7 @@ import React from "react"
 import Navbar from 'react-bootstrap/Navbar';
 
 const Header = ({ siteTitle }) => (
-  <Navbar variant="dark" bg="dark" className="justify-content-end NavBarFluid">
+  <Navbar variant="dark" className="header justify-content-end NavBarFluid" >
     <Navbar.Brand href="#">{siteTitle}</Navbar.Brand>
   </Navbar>
 )
