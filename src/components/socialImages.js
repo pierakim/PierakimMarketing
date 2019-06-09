@@ -11,14 +11,21 @@ const SocialImages = () => (
       query {
         githubImage: file(relativePath: { eq: "GitHub-Mark-Light-120px-plus.png" }) {
           childImageSharp {
-            fluid(maxWidth: 300) {
+            fluid(maxWidth: 400) {
               ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
         linkedInImage: file(relativePath: { eq: "In-White-128.png" }) {
           childImageSharp {
-            fluid(maxWidth: 300) {
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
+          }
+        }
+        resumeImage: file(relativePath: { eq: "Resume.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 400) {
               ...GatsbyImageSharpFluid_tracedSVG
             }
           }
@@ -36,6 +43,9 @@ const SocialImages = () => (
           <a href="http://bit.ly/2Wu6Eom" target="_blank" rel="noopener noreferrer">
             <Img fluid={data.linkedInImage.childImageSharp.fluid}/>
           </a>
+        </Col>
+        <Col>
+          <Img fluid={data.resumeImage.childImageSharp.fluid}/>
         </Col>
       </Row>
     }

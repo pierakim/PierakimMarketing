@@ -11,15 +11,13 @@ const IndexPage = () => (
     <SEO title="Home" />
     <Container className="childContainer" fluid={true}>
       <div>
-      {/* <Container style={{ maxWidth: `100px`, marginBottom: `1.45rem`, borderStyle: `solid`, borderWidth: `5px`, borderRadius: `20%`}}>\ */}
       <Container style={{ maxWidth: `100px`, marginBottom: `1.45rem`}}>
           <StyledLambdaImage/>
         </Container>
         <p>Developer // Brisbane // Australia</p>
-        <Container style={{ maxWidth: `200px`, marginBottom: `1.45rem` }}>
+        <Container style={{ maxWidth: `500px`, marginBottom: `1.45rem` }}>
           <SocialImages/>
         </Container>
-        {/* <Button href="/page-2/" variant="light">Go to page 2</Button> */}
       </div>
     </Container>
   </Layout>
