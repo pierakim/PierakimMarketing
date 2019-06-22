@@ -4,25 +4,25 @@ jobs:
   #   working_directory: ~/PierakimMarketing
   #   docker:
   #     - image: circleci/node:8.10
-  build:
+  # build:
     # <<: *defaults
-    working_directory: ~/PierakimMarketing
-    docker:
-      - image: circleci/node:8.10
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package-lock.json" }}
-      - run:
-          name: Install dependencies
-          command: |
-            npm install
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package-lock.json" }}
-      - run: npm run-script build
+    # working_directory: ~/PierakimMarketing
+    # docker:
+    #   - image: circleci/node:8.10
+    # steps:
+    #   - checkout
+    #   - restore_cache:
+    #       keys:
+    #         - v1-dependencies-{{ checksum "package-lock.json" }}
+    #   - run:
+    #       name: Install dependencies
+    #       command: |
+    #         npm install
+    #   - save_cache:
+    #       paths:
+    #         - node_modules
+    #       key: v1-dependencies-{{ checksum "package-lock.json" }}
+    #   - run: npm run-script build
   # test:
   #   <<: *defaults
   #   steps:
@@ -39,7 +39,7 @@ jobs:
   #           - node_modules
   #         key: v1-dependencies-{{ checksum "package-lock.json" }}
   #     - run: npm test -- -u
-  deploy:
+  BuildAndDeploy:
     # <<: *defaults
     working_directory: ~/PierakimMarketing
     docker:
@@ -66,13 +66,13 @@ jobs:
       #     path: serverless.yml
 workflows:
   version: 2
-  build-test-deploy:
+  build-deploy:
     jobs:
       # - build
       # - test:
       #     requires:
       #       - build
-      - deploy:
+      - BuildAndDeploy:
           filters:
             branches:
               only:
