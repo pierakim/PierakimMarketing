@@ -8,68 +8,68 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package-lock.json" }}
-      - run:
-          name: Install dependencies
-          command: |
-            npm install
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package-lock.json" }}
-      - run: npm run-script build
-  test:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package-lock.json" }}
-      - run:
-          name: Install dependencies
-          command: |
-            npm install
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package-lock.json" }}
-      - run: npm test -- -u
-  deploy:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package-lock.json" }}
-      - run:
-          name: Install Serverless CLI and dependencies
-          command: |
-            sudo npm install -g serverless
-            npm install
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package-lock.json" }}
-      - run: npm run-script build
-      - run: npm run-script deploy
-      - store_artifacts:
-          path: public
-      - store_artifacts:
-          path: serverless.yml
+      # - restore_cache:
+      #     keys:
+      #       - v1-dependencies-{{ checksum "package-lock.json" }}
+      # - run:
+      #     name: Install dependencies
+      #     command: |
+      #       npm install
+      # - save_cache:
+      #     paths:
+      #       - node_modules
+      #     key: v1-dependencies-{{ checksum "package-lock.json" }}
+      # - run: npm run-script build
+  # test:
+  #   <<: *defaults
+  #   steps:
+  #     - checkout
+  #     - restore_cache:
+  #         keys:
+  #           - v1-dependencies-{{ checksum "package-lock.json" }}
+  #     - run:
+  #         name: Install dependencies
+  #         command: |
+  #           npm install
+  #     - save_cache:
+  #         paths:
+  #           - node_modules
+  #         key: v1-dependencies-{{ checksum "package-lock.json" }}
+  #     - run: npm test -- -u
+  # deploy:
+  #   <<: *defaults
+  #   steps:
+  #     - checkout
+  #     - restore_cache:
+  #         keys:
+  #           - v1-dependencies-{{ checksum "package-lock.json" }}
+  #     - run:
+  #         name: Install Serverless CLI and dependencies
+  #         command: |
+  #           sudo npm install -g serverless
+  #           npm install
+  #     - save_cache:
+  #         paths:
+  #           - node_modules
+  #         key: v1-dependencies-{{ checksum "package-lock.json" }}
+  #     - run: npm run-script build
+  #     - run: npm run-script deploy
+  #     - store_artifacts:
+  #         path: public
+  #     - store_artifacts:
+  #         path: serverless.yml
 workflows:
   version: 2
   build-test-deploy:
     jobs:
       - build
-      - test:
-          requires:
-            - build
-      - deploy:
-          filters:
-            branches:
-              only:
-                - master
-          requires:
-            - test
+      # - test:
+      #     requires:
+      #       - build
+      # - deploy:
+      #     filters:
+      #       branches:
+      #         only:
+      #           - master
+      #     requires:
+      #       - test
