@@ -72,10 +72,10 @@ workflows:
       # - test:
       #     requires:
       #       - build
-      # - deploy:
-      #     filters:
-      #       branches:
-      #         only:
-      #           - master
+      - deploy:
+          filters:
+            branches:
+              only:
+                - master
       #     requires:
       #       - test
