@@ -1,5 +1,5 @@
 defaults: &defaults
-  working_directory: ~/<the name if your repository>
+  working_directory: ~/PierakimMarketing
   docker:
     - image: circleci/node:8.10
 version: 2
