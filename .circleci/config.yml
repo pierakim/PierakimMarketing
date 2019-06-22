@@ -18,11 +18,11 @@ jobs:
           name: Install dependencies
           command: |
             npm install
-      # - save_cache:
-      #     paths:
-      #       - node_modules
-      #     key: v1-dependencies-{{ checksum "package-lock.json" }}
-      # - run: npm run-script build
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
+      - run: npm run-script build
   # test:
   #   <<: *defaults
   #   steps:
