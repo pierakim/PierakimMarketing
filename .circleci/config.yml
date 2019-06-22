@@ -49,16 +49,16 @@ jobs:
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package-lock.json" }}
-      - run:
-          name: Install Serverless CLI and dependencies
-          command: |
-            sudo npm i gatsby-plugin-s3
-            npm install
+      # - run:
+      #     name: Install Serverless CLI and dependencies
+      #     command: |
+      #       sudo npm i gatsby-plugin-s3
+      #       npm install
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package-lock.json" }}
-      - run: npm run-script build
+      # - run: npm run-script build
       - run: npm run-script deploy
       - store_artifacts:
           path: public
