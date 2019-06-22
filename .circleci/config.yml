@@ -1,11 +1,14 @@
 version: 2
 jobs:
-  defaults: &defaults
+  # defaults: &defaults
+  #   working_directory: ~/PierakimMarketing
+  #   docker:
+  #     - image: circleci/node:8.10
+  build:
+    # <<: *defaults
     working_directory: ~/PierakimMarketing
     docker:
       - image: circleci/node:8.10
-  build:
-    <<: *defaults
     steps:
       - checkout
       # - restore_cache:
