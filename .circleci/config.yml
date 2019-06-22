@@ -14,10 +14,10 @@ jobs:
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package-lock.json" }}
-      # - run:
-      #     name: Install dependencies
-      #     command: |
-      #       npm install
+      - run:
+          name: Install dependencies
+          command: |
+            npm install
       # - save_cache:
       #     paths:
       #       - node_modules
