@@ -1,9 +1,9 @@
-defaults: &defaults
-  working_directory: ~/PierakimMarketing
-  docker:
-    - image: circleci/node:8.10
 version: 2
 jobs:
+  defaults: &defaults
+    working_directory: ~/PierakimMarketing
+    docker:
+      - image: circleci/node:8.10
   build:
     <<: *defaults
 steps:
