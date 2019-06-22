@@ -1,11 +1,12 @@
 version: 2
 jobs:
-  defaults: &defaults
+  defaults: &default
     working_directory: ~/PierakimMarketing
     docker:
       - image: circleci/node:8.10
+
   build:
-    <<: *defaults
+    <<: *default
       steps:
         - checkout
           - restore_cache:
@@ -20,8 +21,9 @@ jobs:
                 - node_modules
               key: v1-dependencies-{{ checksum "package-lock.json" }}
           - run: npm run-script build
+
   test:
-    <<: *defaults
+    <<: *default
       steps:
         - checkout
           - restore_cache:
@@ -36,8 +38,9 @@ jobs:
                 - node_modules
               key: v1-dependencies-{{ checksum "package-lock.json" }}
           - run: npm test -- -u
+
   deploy:
-    <<: *defaults
+    <<: *default
       steps:
         - checkout
           - restore_cache:
@@ -58,6 +61,7 @@ jobs:
               path: public
           - store_artifacts:
               path: serverless.yml
+
 workflows:
   version: 2
   build-test-deploy:
