@@ -9,19 +9,17 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Container className="childContainer" fluid={true}>
-      <div>
-        <Container>
-          <Container className = "lambdaImageContainer">
-            <StyledLambdaImage/>
-          </Container>
-          <br></br>
-          <p className = "mainText">{"{ DeVeLoPeR - BRisBANe AUsTRALiA }"}</p>
-          <br></br>
-          <Container className = "socialImagesContainer">
-            <SocialImages/>
-          </Container>
+      <Container>
+        <Container className = "lambdaImageContainer">
+          <StyledLambdaImage/>
         </Container>
-      </div>
+        <br></br>
+        <p className = "mainText">{"{ DeVeLoPeR - BRisBANe AUsTRALiA }"}</p>
+        <br></br>
+        <Container className = "socialImagesContainer">
+          <SocialImages/>
+        </Container>
+      </Container>
     </Container>
   </Layout>
 )

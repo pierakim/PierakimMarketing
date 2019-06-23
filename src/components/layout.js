@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import 'bootstrap/dist/css/bootstrap.css';
 import "./layout.css"
-import Container from 'react-bootstrap/Container';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -18,9 +17,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Container className="mainContainer" fluid={true} >
-              {children}
-        </Container>
+        {children}
       </>
     )}
   />
