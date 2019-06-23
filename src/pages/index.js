@@ -1,5 +1,4 @@
 import React from "react"
-
 import Container from 'react-bootstrap/Container';
 import Layout from "../components/layout"
 import SocialImages from "../components/socialImages"
@@ -11,12 +10,16 @@ const IndexPage = () => (
     <SEO title="Home" />
     <Container className="childContainer" fluid={true}>
       <div>
-      <Container style={{ maxWidth: `100px`, marginBottom: `1.45rem`}}>
-          <StyledLambdaImage/>
-        </Container>
-        <p>Developer // Brisbane // Australia</p>
-        <Container style={{ maxWidth: `500px`, marginBottom: `1.45rem` }}>
-          <SocialImages/>
+        <Container>
+          <Container className = "lambdaImageContainer">
+            <StyledLambdaImage/>
+          </Container>
+          <br></br>
+          <p className = "mainText">{"{ DeVeLoPeR - BRisBANe AUsTRALiA }"}</p>
+          <br></br>
+          <Container className = "socialImagesContainer">
+            <SocialImages/>
+          </Container>
         </Container>
       </div>
     </Container>

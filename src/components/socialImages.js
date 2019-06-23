@@ -1,7 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql, withPrefix } from "gatsby"
 import Img from "gatsby-image"
-
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
