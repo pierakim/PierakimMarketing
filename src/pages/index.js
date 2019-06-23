@@ -15,7 +15,7 @@ const IndexPage = () => (
             <StyledLambdaImage/>
           </Container>
           <br></br>
-          <p className = "mainText">{"{ Developer - Brisbane Australia }"}</p>
+          <p className = "mainText">{"{ DeVeLoPeR - BRisBANe AUsTRALiA }"}</p>
           <br></br>
           <Container className = "socialImagesContainer">
             <SocialImages/>
